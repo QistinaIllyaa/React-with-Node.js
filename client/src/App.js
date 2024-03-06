@@ -38,11 +38,20 @@ useEffect(() => {
       setBackendData(data) //get the backend data
     }
   )
-})
+}, []) // adding the empty array will make it run only the first render of the component
 
   return(
     <div>
       
+      {/* if statement */}
+      {(typeof backendData.users === 'undefined') ? (
+        <p>Loading...</p> //give a loading message when trying to fetch the data
+      ) : (
+        backendData.users.map((user, i) => (
+          <ul key={i}>{user}</ul> //getting user from the backend
+        ))
+      )}
+
     </div>
   )
 }
