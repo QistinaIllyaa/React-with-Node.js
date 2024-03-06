@@ -42,7 +42,8 @@ useEffect(() => {
 
   return(
     <div>
-      
+      <ol><b> Success on creating first react+Node.js</b> </ol>
+          
       {/* if statement */}
       {(typeof backendData.users === 'undefined') ? (
         <p>Loading...</p> //give a loading message when trying to fetch the data
